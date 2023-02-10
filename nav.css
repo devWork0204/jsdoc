@@ -1,0 +1,24 @@
+.nav-tree{
+	list-style-type: none;	
+	padding: 0px 10px 0 12px;
+}
+.nav-tree li{
+	padding: 0 0 0 12px;
+	line-height: 24px;
+	border-radius: 3px;
+}
+.nav-tree li:hover{
+	background-color: rgb(236, 236, 236);
+}
+.nav-tree .level1{
+	margin: 6px 0 4px 0;
+	font-weight: bold;
+	/* border-left: 3px solid black; */
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.nav-tree .level2{
+	margin-left: 18px;
+	padding-left: 10px;
+}

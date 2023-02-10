@@ -1,0 +1,492 @@
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="style.css?v=13" />
+		<link type="text/css" rel="stylesheet" href="nav.css" />
+	</head>
+	<body>
+		<div class="header">
+			<div class="header-content">
+				<div class="logo-content">
+					<div class="text">JS</div>
+					<div class="title"><b>J</b>AVA<b>S</b>CRIPT</div>
+					<div class="clear"></div>
+				</div>
+				<div class="catalog">
+					<ul class="cat">
+						<li class="" onclick="show(this, 'main-content')"><b>L</b>ý thuyết</li>
+						<li class="" onclick="show(this, 'practice')"><b>B</b>ài tập</li>
+					</ul>
+				</div>
+				<div class="search">
+					<input class="txt" style="width: 70%" placeholder="Search..." type="text"/>
+				</div>
+				<div style="width: 130px"></div>
+			</div>
+		</div>
+
+		<div style="height: 56px"></div>
+		<div class="content">
+			<div class="nav">
+				<ul class="nav-tree"></ul>
+			</div>
+			<!-- lý thuyết -->
+			<div class="content-tab main-content">
+				<!-- Giới thiệu -->
+				<div class="page">
+					<h1 data-title data-bind="about.title"></h1>
+					<div class="line">
+						<div class="box grey item-margin" style="text-align: center; padding: 50px">
+							<img src="js-logo.png">
+						</div>
+						<div class="box grey flex item-margin">
+							<div data-bind="about.concept.title" class="box-title"></div>
+							<div data-bind="about.concept.state1" class="statement"></div>
+							<div data-bind="about.concept.state2" class="statement"></div>
+						</div>
+					</div>
+					<div class="line">
+						<div class="box half grey">
+							<div data-bind="about.operate.title" data-title class="box-title"></div>
+							<div data-bind="about.operate.state1" class="statement"></div>
+							<div data-bind="about.operate.state2" class="statement"></div>
+							<div data-bind="about.operate.state3" class="statement"></div>
+						</div>
+						<div class="box half grey">
+							<div data-bind="about.purpose.title" data-title class="box-title"></div>
+							<div data-bind="about.purpose.state1" class="statement"></div>
+							<div data-bind="about.purpose.state2" class="statement"></div>
+							<div data-bind="about.purpose.state3" class="statement"></div>
+						</div>
+					</div>
+					<div class="line">
+						<div class="box full grey">
+							<div data-bind="about.devTool.title" data-title class="box-title"></div>
+							<div data-bind="about.devTool.state1" class="statement"></div>
+							<div data-bind="about.devTool.state2" class="statement"></div>
+							<div class="statement">
+								<span data-bind="about.devTool.state3.title"></span>
+									<ul>
+										<li data-bind="about.devTool.state3.state1"></li>
+										<li data-bind="about.devTool.state3.state2"></li>
+										<li data-bind="about.devTool.state3.state3"></li>
+									</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Javascript cơ bản -->
+				<div class="page">
+					<h1 data-bind="basic.title" data-title></h1>
+					<div class="line">
+						<div class="box grey item-margin full">
+							<div data-bind="basic.init.title" data-title class="box-title"></div>
+							<div class="statement">Do JavaScript là một ngôn ngữ biên dịch nhanh, và các trình duyệt đã tích hợp sẵn trình biên dịch, để bắt đầu làm việc với JavaScript có thể lựa chọn 1 trong các cách thức sau</div>
+							<div class="statement">Sử dụng DevTools viết mã lệnh</div>
+							<div class="code">console.log("JavaScript Helloworld")</div>
+							<div class="statement">Tạo mới tập tin <b>Demo.html</b>, viết mã lệnh trực tiếp vào trong cặp thẻ &lt;script&gt;&lt;script/&gt; trang web</div>
+							<div class="statement">Viết mã lệnh JavaScript vào tập tin <b>.js</b> và nhúng vào trang Html</div>
+						</div>
+					</div>
+					<div class="line">
+						<div class="box grey item-margin full">
+							<div data-bind="basic.texture.title" data-title class="box-title"></div>
+							<div class="statement">
+								Câu lệnh là đơn vị nhỏ nhất trong ngôn ngữ lập trình 
+								Các câu lệnh trong JavaScript thường cách nhau bới dấu <b>;</b>
+								<br/>
+								Dấu <b>;</b> có thể bỏ qua nếu như mỗi câu lệnh nằm trên một dòng
+							</div>
+							<div class="t-flex">
+								<textarea data-bind="basic.texture.example1" code-name="dfgder124sdf" onkeydown="_page.keyDown(this)" class="code half"></textarea>
+								<div data-bind="basic.texture.example2" code-result="dfgder124sdf" class="code flex"></div>
+							</div>
+
+							<div class="statement">Ngoại lệ: vẫn có nhiều trường hợp xuống dòng nhưng JavaScript vẫn hiểu đó là một câu lệnh</div>
+							<div class="t-flex">
+								<textarea data-bind="basic.texture.example3" class="code full" rows="3"></textarea>
+							</div>
+							<div class="statement">
+								Bởi vì, khi hết dòng đầu tiên, <b>)</b> cho câu lệnh console.log() nên câu lệnh vẫn chưa kết thúc
+							</div>
+						</div>
+					</div>
+					<div class="line">
+						<div class="box grey item-margin full">
+							<div data-bind="basic.comment.title" data-title class="box-title"></div>
+							<div class="statement">Có hai kiểu viết chú thích là:</div>
+							<div class="statement">Chú thích một dòng: sử dụng <b>//</b></div>
+								<div class="code">// Đây là chú chích trên 1 dòng
+console.log("Hello");</div>
+							<div class="statement">Chú thích nhiều dòng: sử dụng <b>/* */</b></div>
+								<div class="code">/**
+ * Tính tổng 2 số
+ * @params a integer số thứ 1
+ * @params a integer số thứ 2
+ * @return tổng 2 số
+ */
+function add(a, b){
+	return a + b;
+}</div>
+						</div>
+					</div>
+					<div class="line">
+						<div class="box grey item-margin full">
+							<div data-bind="basic.decalare.title" data-title class="box-title"></div>
+							<div class="statement">
+								JavaScript là một ngôn ngữ định kiểu yếu(<b>weak type</b>), có nghĩa là không cho phép xác định kiểu biến. Một biến có thể lưu trữ bất kỳ kiểu dữ liệu nào và các phép toán sẽ giả định kiểu của biến. Kết quả cũng có thể bị ép chuyển thành một kiểu dữ liệu khác.
+							</div>
+							<div class="statement">
+								Để khai báo biến trong JavaScript, bạn dùng từ khóa <b>let</b> hoặc <b>var</b> và sử dụng toán tử <b>=</b> để thử hiện gán.
+							</div>
+							<div class="code">let foo;
+let no = 5;
+let language = "JavaScript";	
+							</div>
+							<div class="statement">
+								Để khai báo nhiều biến, bạn có thể dùng dấu phẩy <b>,</b> để ngăn cách các biến trên cùng một dòng:
+							</div>
+							<div class="code">let foo, 
+  language = "JavaScript",
+  volume = 20,
+  date = new Date('2022-02-04');</div>
+						</div>
+					</div>
+					<div class="line">
+						<div class="box grey item-margin full">
+							<div data-bind="basic.decalare.title" data-title class="box-title"></div>
+							<div class="statement">
+								Bắt đầu bằng chữ cái, dấu gạch dưới <b>_</b> hoặc kí tự "đô la" <b>$</b>.
+								<br/>
+								Sau kí tự đầu tiên, ngoài những kí tự trên, bạn có thể sử dụng thêm số (0-9).
+								<br/>
+								Không sử dụng từ khoá để đặt tên biến:
+							</div>
+							<div class="statement">Danh sách những từ khoá:</div>
+							<div class="code">let break case catch class const continue debugger default delete do else enum export extends false finally for function if implements import in instanceof interface let new null package private protected public return static super switch this throw true try typeof var void while with yield</div>
+							<div class="statement">Ví dụ những tên biến hợp lệ:</div>
+							<div class="code">let temp = 100;
+let _result3 = 10;
+let $_$ = "hehehe";
+let dientichao = 999;
+							</div>
+							<div class="statement">Ví dụ những tên biến không hợp lệ:</div>
+							<div class="code">let point% = 50;       // sử dụng kí tự đặc biệt %
+let 2you = 'passtion'; // bắt đầu bằng số
+let null = 'oh no';    // sử dụng từ khoá "null"</div>
+						</div>
+					</div>
+					<!-- Các kiểu dữ liệu -->
+					<div class="line">
+						<div class="box grey item-margin full">
+							<div data-bind="basic.dataType.title" data-title class="box-title"></div>
+							<div class="statement">Mặc dù JS là ngôn ngữ định kiểu yếu (<b>weak type</b>), không có nghĩa là nó không có khái niệm kiểu dữ liệu. JS không chỉ định rõ ràng kiểu và có khả năng ép kiểu linh hoạt, nên nó được gọi là kiểu yếu (weak typing).</div>
+							<div class="statement">
+								JavaScript có 8 kiểu dữ liệu cơ bản, trong đó, có 7 kiểu dữ liệu nguyên thủy (boolean, null, undefined, number, BigInt, string, symbol) và 1 kiểu dữ liệu dạng tham chiếu (object).
+							</div>
+							<div class="statement">
+								<b>Kiểu dữ liệu <b>boolean</b> (kiểu logic):</b>
+							</div>
+							<div class="statement">
+								Bolean là kiểu dữ liệu logic chỉ bao gồm hai giá trị là true và false:
+							</div>
+							<div class="code">let seen = true;
+console.log(seen); // true</div>
+							<div class="t-flex">
+								<div class="half">
+									<div class="statement">
+										<b>Kiểu dữ liệu <b>null</b></b>
+									</div>
+									<div class="statement">
+										<b>null</b> là một kiểu dữ liệu đặc biệt, chỉ bao gồm một giá trị là null
+										<br/>
+										ví dụ:
+									</div>
+									<div class="code" style="height: 114px;">let language = null;
+console.log(language); // null</div>
+								</div>
+								<div class="half">
+									<div class="statement">
+										<b>Kiểu dữ liệu <b>undefined</b></b>
+									</div>
+									<div class="statement">
+										Tương tự như <b>null</b>, <b>undefined</b> là một kiểu dữ liệu đặc biệt trong JavaScript, chỉ bao gồm một giá trị undefined, ví dụ:
+									</div>
+									<div class="code">let language;
+console.log(language); // undefined
+
+let language = undefined;
+console.log(language); // undefined</div>
+								</div>
+							</div>
+							<!-- Khác nhau -->
+							<div class="statement">
+								Khác nhau cơ bản giữa <b>undefined</b> và <b>null</b>:
+								<ul>
+									<li>Kiểu dữ liệu <b>null</b> là kiểu dữ liệu được gán cho biến, thường được hiểu là không biết (không có).</li>
+									<br/>
+									<li>Trong khi đó, kiểu dữ liệu <b>undefined</b> là giá trị mặc định của biến sau khi khai báo mà không gán giá trị cho biến.</li>
+								</ul>
+							</div>
+							<!-- Kiểu Number -->
+							<div class="statement">
+								<b>Kiểu dữ liệu <b>number</b></b>
+							</div>
+							<div class="statement">
+								Kiểu dữ liệu <b>number</b> là kiểu dữ liệu dạng số (tương tự trong toán học). <b>Number</b> trong JavaScript không có cú pháp gì đặc biệt. Bạn chỉ cần viết số ra.
+								<br/>
+								JavaScript có hai loại số là: <b>số nguyên</b> và <b>số thực</b>.
+							</div>
+							<div class="code">let n1 = 66; // số nguyên dương
+let n2 = -66; // số nguyên âm
+let n3 = 3.14; // số thực dương
+let n4 = -3.14; // số thực âm
+let n5 = 2e3; // => 2*10^3 = 2000
+let n6 = 2e-3; // => 2*10^(-3) = 0.002
+let n7 = 0xff; // số dạng hexa (hệ cơ số 16): 15*16 + 15 = 255
+let n8 = 067; // số dạng octa (hệ cơ số 8): 6*8 + 7 = 55
+let n9 = 0b11; // số dạng nhị phân (hệ cơ số 2): 1*2 + 1 = 3</div>
+						<!-- Kiểu BigInt -->
+						<div class="statement">
+							<b>Kiểu dữ liệu <b>BigInt</b></b>
+						</div>
+						<div class="statement">
+							Trong JavaScript, kiểu dữ liệu <b>number</b> không thể biểu diễn một số nguyên lớn hơn (253-1) (bằng 9007199254740991) và nhỏ hơn -(253-1)
+							<br/>
+							Để biểu diễn số nguyên với kiểu BigInt, bạn chỉ cần thêm chữ cái <b>n</b> ở phía sau, ví dụ:
+						</div>
+						<div class="code">const reallyBigNumber = 12345678987654321012345678987654321n;
+console.log(reallyBigNumber); // 12345678987654321012345678987654321n</div>
+						<!-- Kiểu String -->
+						<div class="statement">
+							<b>Kiểu dữ liệu string</b>
+						</div>
+						<div class="statement">
+							<b>String</b> là kiểu dữ liệu dùng để biểu diễn chữ, văn bản, đoạn văn bản,...
+						</div>
+						<div class="statement">
+							Có ba cách để biểu diễn string trong JavaScript:
+							<ul>
+								<li>Dùng dấu nháy đơn '</li>
+								<li>Dùng dấu nháy kép "</li>
+								<li>Dùng dấu "backtick" `</li>
+							</ul>
+						</div>
+						<div class="code">const msg1 = "Đây là string dùng dấu nháy đơn";
+const msg2 = "Đây là string dùng dấu nháy kép";
+const msg3 = `Đây là string dùng dấu backtick`;</div>
+						<div class="statement">
+							Riêng với dấu "backtick", bạn có thể sử dụng biến, hằng hoặc thậm chí viết một biểu thức trong đó, với cú pháp ${…}, ví dụ:
+						</div>
+						<div class="code">// Truyền biến vào trong dấu "backtick"
+let name = "Lam";
+console.log(`My name is ${name}`); // My name is Lam
+
+// Truyền hằng vào trong dấu "backtick"
+const language = "JavaScript";
+console.log(`You are learning ${language}`); // You are learning JavaScript
+
+// Truyền vào biểu thức
+console.log(`1 + 2 = ${1 + 2}`); // 1 + 2 = 3</div>
+						<!-- Kiểu Object -->
+						<div class="statement">
+							<b>Kiểu dữ liệu Object:</b>
+						</div>
+						<div class="statement">
+							<b>Object</b> là kiểu dữ liệu tham chiếu. Có thể hiểu <b>object</b> là một tập hợp gồm các cặp key - value (khóa - giá trị).
+						</div>
+						<div class="code">{
+	language: 'JavaScript',
+	age: 100,
+	version: 5.9,
+	releaseDate: new Date('2022-12-12')
+}</div>
+					</div>
+					</div>
+					<!-- Toán tử -->
+					<div class="line">
+						<div class="box grey item-margin full">
+							<div data-bind="basic.operator.title" data-title class="box-title"></div>
+							<div data-bind="basic.operator.foreword" class="statement"></div>
+							<div data-bind="basic.operator.concept" class="statement"></div>
+							<!-- Toán tử số học -->
+							<div data-bind="basic.operator.numbOperator.title" data-title class="statement bold"></div>
+							<div data-bind="basic.operator.numbOperator.concept" class="para"></div>
+							<ul>
+								<li data-bind="basic.operator.numbOperator.list.item1"></li>
+								<li data-bind="basic.operator.numbOperator.list.item2"></li>
+								<li data-bind="basic.operator.numbOperator.list.item3"></li>
+								<li data-bind="basic.operator.numbOperator.list.item4"></li>
+								<li data-bind="basic.operator.numbOperator.list.item5"></li>
+								<li data-bind="basic.operator.numbOperator.list.item6"></li>
+							</ul>
+							<div data-bind="basic.operator.numbOperator.example1" class="code"></div>
+							<!-- Toán tử ghép string -->
+							<div data-bind="basic.operator.concatOprator.title" data-title class="statement bold"></div>
+							<div data-bind="basic.operator.concatOprator.concept" class="para"></div>
+							<div data-bind="basic.operator.concatOprator.example1" class="code"></div>
+							<!-- Toán tử chuyển đổi kiểu dữ liệu thành number -->
+							<div data-bind="basic.operator.convertOperator.title" data-title class="statement bold"></div>
+							<div data-bind="basic.operator.convertOperator.concept" class="para"></div>
+							<div data-bind="basic.operator.convertOperator.example1" class="code"></div>
+							<!-- Toán tử gán -->
+							<div data-bind="basic.operator.assignOperator.title" data-title class="statement bold"></div>
+							<div data-bind="basic.operator.assignOperator.concept1" class="para"></div>
+							<div data-bind="basic.operator.assignOperator.example1" class="code"></div>
+							<div data-bind="basic.operator.assignOperator.concept2" class="para"></div>
+							<div data-bind="basic.operator.assignOperator.example2" class="code"></div>
+							<!-- Toán tử tăng/giảm -->
+							<div data-bind="basic.operator.step1Operator.title" data-title class="statement bold"></div>
+							<div data-bind="basic.operator.step1Operator.concept1" class="para"></div>
+							<div data-bind="basic.operator.step1Operator.example1" class="code"></div>
+							<div data-bind="basic.operator.step1Operator.foreword1" class="para"></div>
+							<ul>
+								<li data-bind="basic.operator.step1Operator.state1"></li>
+								<li data-bind="basic.operator.step1Operator.state2"></li>
+							</ul>
+							<div data-bind="basic.operator.step1Operator.example2" class="code"></div>
+							<!-- Toán tử bitwise -->
+							<div data-bind="basic.operator.bitwiseOperator.title" data-title class="statement bold"></div>
+							<div data-bind="basic.operator.bitwiseOperator.concept" class="para"></div>
+							<!-- Toán tử dấu phẩy -->
+							<div data-bind="basic.operator.commaOperator.title" data-title class="statement bold"></div>
+							<div data-bind="basic.operator.commaOperator.concept1" class="para"></div>
+							<div data-bind="basic.operator.commaOperator.example1" class="code"></div>
+						</div>
+					</div>
+					<!-- So sánh -->
+					<div class="line">
+						<div class="box grey item-margin full">
+							<!-- Các toán tử so sánh trong JavaScript -->
+							<div data-bind="basic.compare.title" data-title class="box-title"></div>
+							<div data-bind="basic.compare.types.foreword" class="statement bold"></div>
+							<div data-bind="basic.compare.types.concept" class="statement"></div>
+							<div data-bind="basic.compare.types.operator" class="code"></div>
+							<!-- Kết quả của phép so sánh -->
+							<div data-bind="basic.compare.result.forword" class="statement bold"></div>
+							<div data-bind="basic.compare.result.concept" class="para"></div>
+							<div data-bind="basic.compare.diffTypes.concept" class="para"></div>
+							<div data-bind="basic.compare.diffTypes.state1" class="para"></div>
+							<div data-bind="basic.compare.diffTypes.example1" class="code"></div>
+							<!-- So sánh bằng nghiêm ngặt -->
+							<div data-bind="basic.compare.diffTypes.strictCompare.concept" class="statement"></div>
+							<div data-bind="basic.compare.diffTypes.strictCompare.example1" class="code"></div>
+							<!-- So sánh null và undefined -->
+							<div data-bind="basic.compare.nullAndUndefined.title" class="statement bold"></div>
+							<div data-bind="basic.compare.nullAndUndefined.concept" class="para"></div>
+							<div data-bind="basic.compare.nullAndUndefined.example1" class="code"></div>
+
+							<div data-bind="basic.compare.nullAndUndefined.null2Zero.title" class="statement"></div>
+							<div data-bind="basic.compare.nullAndUndefined.null2Zero.example1" class="code"></div>
+							<div data-bind="basic.compare.nullAndUndefined.undefined2Zero.title" class="statement"></div>
+							<div data-bind="basic.compare.nullAndUndefined.undefined2Zero.example1" class="code"></div>
+							<div class="statement bold">Kết luận</div>
+							<div data-bind="basic.compare.nullAndUndefined.note1" class="para"></div>
+							<div data-bind="basic.compare.nullAndUndefined.note2" class="para"></div>
+							<div data-bind="basic.compare.nullAndUndefined.note3" class="para"></div>
+							<div class="t-flex">
+								<textarea code-name="test1" onkeydown="_page.keyDown(this)" class="code half">null > undefined</textarea>
+								<div code-result="test1" class="code half"></div>
+							</div>
+						</div>
+					</div>
+					<!-- Vòng lặp -->
+					<div class="line">
+						<div class="box grey item-margin full">
+							<div data-bind="basic.loop.title" data-title class="box-title"></div>
+							<div class="statement bold">Vòng lặp trong JavaScript</div>
+							<div data-bind="basic.loop.foreword" class="para"></div>
+							<div class="para">Có ba vòng lặp trong JavaScript</div>
+							<ul>
+								<li>Vòng lặp while.</li>
+								<li>Vòng lặp do...while.</li>
+								<li>Vòng lặp for.</li>
+							</ul>
+
+							<div class="statement bold">Vòng lặp while</div>
+							<div class="t-flex">
+								<textarea data-bind="basic.loop.while.example1" code-name="340hksxw35" onkeydown="_page.keyDown(this)" rows="8" class="code full"></textarea>
+							</div>
+							<div class="para"><b>Condition</b> là điều kiện thực hiện vòng lặp.</div>
+							<div class="para">Khi <b>condition</b> có giá trị truthy thi <b>code</b> được thực thi và ngược lại</div>
+
+							<div class="statement bold">Vòng lặp do...while</div>
+							<div data-bind="basic.loop.doWhile.concept1" class="para"></div>
+							<div data-bind="basic.loop.doWhile.concept2" class="para"></div>
+							<div class="t-flex">
+								<textarea data-bind="basic.loop.doWhile.example1" code-name="sdgaslk56" onkeydown="_page.keyDown(this)" rows="5" class="code full"></textarea>
+							</div>
+
+							<div class="statement bold">Vòng lặp for</div>
+						</div>
+					</div>
+					<!-- Hàm -->
+					<div class="line">
+						<div class="box grey item-margin full">
+							<div data-bind="basic.function.title" data-title class="box-title"></div>
+							<div class="statement bold">Hàm là gì</div>
+							<div data-bind="basic.function.concept1" class="para"></div>
+							<div class="para">Số lượng tham số của hàm là không giới hạn.</div>
+							<div data-bind="basic.function.example1" class="code"></div>
+
+							<div class="statement bold">Giá trị tham số mặc định</div>
+							<div data-bind="basic.function.defaulParam.concept1" class="para"></div>
+							<div data-bind="basic.function.defaulParam.concept2" class="para"></div>
+							<div data-bind="basic.function.defaulParam.concept3" class="para"></div>
+							<div class="t-flex">
+								<textarea data-bind="basic.function.defaulParam.example1" code-name="568nsxw35" onkeydown="_page.keyDown(this)" rows="9" class="code half"></textarea>
+								<div code-result="568nsxw35" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">Hàm trong JavaScript có thể trả về giá trị khi gọi hàm.</div>
+							<div class="para">Hàm trong JavaScript có thể trả về giá trị khi gọi hàm.</div>
+							<div data-bind="basic.function.return.concept1" class="para"></div>
+							<div class="t-flex">
+								<textarea data-bind="basic.function.return.example1" code-name="354dfgxs12" onkeydown="_page.keyDown(this)" rows="13" class="code f-80"></textarea>
+								<div code-result="354dfgxs12" class="code half"></div>
+							</div>
+							<div data-bind="basic.function.return.concept2" class="para"></div>
+							<div data-bind="basic.function.return.concept3" class="para"></div>
+
+							<div class="statement bold">Cách đặt tên hàm trong JavaScript</div>
+							<div class="para">Quy tắc đặt tên hàm trong JavaScript cũng giống như quy tắc đặt tên biến hay hằng trong JavaScript:</div>
+						</div>
+					</div>
+					
+				</div>
+				<!-- Object trong JS -->
+
+				<!-- Bài tập -->
+				<div class="content-tab practice d-none">
+				<div class="page">
+					<h1>Bài tập</h1>
+					<div class="line">
+						<div class="box grey item-margin full">
+							<div class="statement">Bài 1: Các tên biến sau đúng hay sai?</div>
+							<div class="code">let num = 100;
+let _result3@ = "haha";
+let $_$ = "hehehe";
+let 2me = 'love';
+let I_WANT_TO_EAT = "just eat it";
+let dientihinhvuong = 999;
+let a%b = 50;
+let var = 'oh no';</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+
+			<div class="right"></div>
+		</div>
+
+		<div class="footer">
+			
+		</div>
+
+		<script src="layoutConfig.js"></script>
+		<script src="layout.js"></script>
+		<script src="pageData.js"></script>
+		<script src="page.js"></script>
+		<script src="Demo.js"></script>
+	<body/>
+<html/>
