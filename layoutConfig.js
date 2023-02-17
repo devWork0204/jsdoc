@@ -1,7 +1,6 @@
 navConfig = [
     {
         name: "Giới thiệu",
-        href: "About",
         level: 1,
     },
     {
@@ -97,7 +96,7 @@ navConfig = [
         level: 2,
     },
     {
-        name: "Xử lý Array",
+        name: "Array",
         level: 2,
     },
     {
@@ -136,4 +135,15 @@ navConfig = [
         name: "CallBack",
         level: 2,
     }
+];
+
+practiveConfig = [
+    {
+        name: "Bài 1: ",
+        level: 1,
+    },    
+    {
+        name: "Bài 2: ",
+        level: 1,
+    },
 ]

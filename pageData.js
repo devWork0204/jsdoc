@@ -172,5 +172,111 @@ var pageData = {
                 example1: "let count = 1;\n\tdo {\n\tconsole.log(count);\n\tcount++;\n} while (count <= 3);"
             }
         }
+    },
+    object: {
+        title: "Object trong Javascript",
+        concept: {
+            title: "Object là gì",
+            state1: "Về bản chất, object là tập hợp của các key và value. Với key gọi là thuộc tính, còn value là giá trị tương ứng của thuộc tính.",
+            state2: "JavaScript object sử dụng cặp dấu ngoặc <b>{}</b> để biểu diễn:",
+            example1: 'let myComputer = {\n\ttype: "laptop",\n\tbrand: "Sony",\n\tos: "Windows 7"\n};',
+            desc1: "<b>type, laptop brand, os</b> là tên thuộc tính, có kiểu dữ liệu <b>string</b>",
+            desc2: "<b>laptop, Sony,...</b>  là giá trị tương ứng của các thuộc tính. <b>Value</b> có thể thuộc bất kỳ kiểu dữ liệu nào (kể cả <b>object</b>).",
+            example2: "let myComputer = {};\nlet yourComputer = new Object();",
+        },
+        use: {
+            title: "Tương tác với Object",
+            example1: 'let myComputer = {\n\ttype: "laptop",\n\tbrand: "Sony",\t\n\tos: "Windows 7",\n\t"graphic card": "NVIDIA"\n};\n\nmyComputer.type // truy cập thuộc tính type\nmyComputer.brand = "Dell" // cập nhập giá trị brand \nmyComputer.brand // truy cập tính type\n\nmyComputer["graphic card"] // truy cập "graphic card"\nmyComputer["os"] = "Ubuntu" // cập nhập giá trị os\n',
+            state1: "Đặc biệt, toán tử <b>.</b> chỉ dùng được trong trường hợp tên thuộc tính không có kí tự đặc biệt (ngoại trừ kí tự <b>_</b> và <b>$</b>)",
+            example2: 'let myComputer = {};\n\nmyComputer.type = "pc"',
+            example3: 'let myComputer = {\n  type: "laptop"\n};\n\ndelete myComputer.type;\nmyComputer.type'
+        },
+        squareOperator: {
+            title: "Toán tử ngoặc vuông []",
+            concept1: "JavaScript cho phép bạn truy cập vào thuộc tính với giá trị của key là biến hoặc biểu thức.",
+            example1: 'let myComputer = {\n  "graphic card": "NVIDIA",\n};\n\n// sử dụng biến\nlet key = "graphic card";\nmyComputer[key]\n\n// sử dụng biểu thức\nmyComputer["graphic" + " " + "card"]',
+            example2: 'let t = "type";\n\nlet myComputer = {\n  [t]: "laptop",\n  [os]: "NVIDIA",\n};\n\nmyComputer.type;'
+        },
+        compact: {
+            title: "Cú pháp rút gọn",
+            state1: "Khi lập trình, bạn sẽ gặp trường hợp là: muốn sử dụng tên biến làm tên thuộc tính cho object",
+            state1: "Để tránh phải viết lặp lại, JavaScript cung cấp cú pháp rút gọn như sau:",
+            example1: 'let type = "laptop", brand = "Sony", os = "Windows 7";\n\n// khai báo thông thường\nlet myComputer = {\n    type: type,\n    brand: brand,\n    os: os\n  };\n// JSON.stringify(myComputer);\n\n// rút gọn\nlet myComputer = {\n    type,\n    brand,\n    os\n};\nJSON.stringify(myComputer);'
+        },
+        specObject: {
+            title: "Các Object đặc biệt trong JavaScript",
+            arg: {
+                concept: "Mỗi khi hàm được gọi, có một biến số đặc biệt tên là arguments được thêm vào bên trong phạm vi của function. Biến số này chứa một thuộc tính là length, để xác định số lượng tham số truyền vào.",
+                example1: "function maxOf() {\n  let max = -1;\n\n  for (let i = 0; i < arguments.length; i++) {\n    if (arguments[i] > max) max = arguments[i];\n  }\n\n  return max;\n}\n\nmaxOf(1, 2)\n\n// maxOf(1, 2, 6, 4, 7, 3, 5)",
+            },
+            math: {
+                example1: "Math.min(1, 2, 3); // Tìm giá trị nhỏ nhất.\nMath.max(1, 2, 3); // Tìm giá trị lớn nhất.\nMath.sqrt(4); // Tìm giá trị căn bậc hai.\nMath.abs(-5); // Tìm giá trị tuyệt đối."
+            },
+            global: {
+                concept1: "Trên với trình duyệt, object lớn nhất chính là window. Mọi biến <b>global</b> đều thuộc đối tượng này.",
+                example1: 'var x = 6;\n\n"x" in window;\n\nwindow.x;'
+            }
+        },
+    },
+    common: {
+        title: "Các phương thức thường dùng",
+        string: {
+            title: "Xử lý String",
+            example1: "let example1 = '  String toturial 1: String là kiểu dữ liệu thông dụng trong Js   '",
+            example2: 'example1.toLowerCase(); // chuyển chữ viết thường\nexample1.toUpperCase(); // chuyển chữ viết hóa',
+            example3: 'example1.trimStart() // loại bỏ khoảng trắng ở đầu\nexample1.trimEnd() // loại bỏ khoảng trắng ở cuối\nexample1.trim()',
+            example4: 'example1.substring(3, 13) // cắt đoạn string giữa từ vị trí 3 đến 13\nexample1.substr(3, 13) // cắt chuỗi từ vị trí 3 và lấy 13 ký tự',
+            example5: '// thay thế kết chuỗi "String" đầu tiên tìm được\nexample1.replace("String", "Chuỗi")\n\n// thay thế tất cả các chuỗi "String"\nexample1.replaceAll("String", "Chuỗi")',
+            example6: 'let foo = example1.split(" ", 4)\nJSON.stringify(foo)',
+            example7: 'example1.startsWith("String") // chuỗi có bắt đầu từ "String" không?\nexample1.endsWith("Js") // chuỗi có kết thúc bằng "Js" không?\nexample1.includes("String") // chuỗi có chứa "String" không',
+            example8: 'example1.concat(" ", "(thử nghiệm)", " ", "phiên bản 1")'
+        },
+        object: {
+            title: "Xử lý Object",
+            example1: "const example2 = {\n    firstName: 'Hieu',\n    lastName: 'Bui'\n};",
+            example2: "Object.assign(example2, {age: 10}, {firstName: 'Ho'})\nJSON.stringify(example2)",
+            example3: "let entries = Object.entries(example2)\nJSON.stringify(entries)",
+            example4: "let keys = Object.keys(example2)\nJSON.stringify(keys)\n\nlet values = Object.values(example2)\nJSON.stringify(values)",
+            example5: `let foo = JSON.parse('{"shape": "Round"}')\nfoo.shape;\n\nlet foo2 = JSON.stringify(example2)\nfoo2`,
+        },
+        array: {
+            title: "Array",
+            example1: 'let example3 = ["toturial", {fee: 100}, 5, 10, 15, 20, "khóa học js cấp tốc"]',
+            example2: 'let foo = example3.concat([1, 2], ["a", "b"])\n\nJSON.stringify(foo)',
+            example3: 'let foo = example3.filter(function(ele, i) {\n  return typeof(ele) == "string"\n});\n\nJSON.stringify(foo)',
+            example4: 'let foo = example3.find(function(ele, i) {\n  return typeof(ele) == "string"\n});\n\nfoo',
+            example5: 'example3.forEach(function(ele, i) {\n  alert(ele);\n});',
+            example6: 'example3.includes({fee: 100});\n\nexample3.includes(10);',
+            example7: 'example3.indexOf("toturial", 1);\n\nexample3.indexOf({fee: 100}, 1);',
+            example8: 'example3.join(" -> ");',
+            example9: 'let foo = example3.map(function(ele, i){\n  return `value: ${ele} - at: ${i}`;\n});\n\nJSON.stringify(foo)',
+            example10: 'example3.pop()',
+            example11: 'example3.shift()',
+            example12: 'example3.push("othelo", 520)\nJSON.stringify(example3)',
+            example13: 'example3.unshift(["number1", 2])\nJSON.stringify(example3)',
+            example14: 'example3.filter(function(ele) {\n  return typeof ele == "number";\n})\n.reduce(function(total, current) {\n  return total + current;\n})',
+            example15: 'let foo = example3.reverse()\nJSON.stringify(foo)',
+            example16: 'example3.some(function(ele) {\n  return typeof ele == "number";\n})',
+            example17: 'example3.sort();\n\nexample3.sort(function(a, b){\n  let a1 = String(a), b1 = String(b);\n  return a1.length > b1.length ? -1 : 1;\n});',
+            example18: 'let foo = example3.slice(1, 2)\n\nJSON.stringify(foo)',
+            example19: 'let foo = example3.splice(2, 1, "happy new year", 2023);\n\nJSON.stringify(foo);\n\nJSON.stringify(example3);',
+            example20: 'Array.from([1, 2, 3], function(ele){\n  return ele**2;\n});',
+            example21: 'Array.isArray(example3)',
+        }
+    }
+};
+
+var practice = {
+    ex1: {
+        title: "Bài 1: ",
+        state1: "Viết chương trình JavaScript để lấy ngày hiện tại. Đầu ra mong đợi: mm-dd-yyyy",
+        tip: "// Gợi ý: Các Lấy ngày hiện tại\nlet now = new Date()\n// lấy năm/ lấy tháng/ lấy ngày\nnow.getFullYear()\nnow.getMonth()\nnow.getDay()\n",
+        state2: "",
+        code: "",
+    },
+    ex2: {
+        title: "Bài 2: ",
+        state1: "Viết chương trình tính tổng các số nguyên dương trong mảng",
+        code: "let foo = ['tính tổng', '1', 2, 3, -4, 2.6, 7.4, {num: 123}]",
     }
 }

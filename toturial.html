@@ -2,6 +2,7 @@
 	<head>
 		<link type="text/css" rel="stylesheet" href="style.css?v=13" />
 		<link type="text/css" rel="stylesheet" href="nav.css" />
+		<script src="pageData.js"></script>
 	</head>
 	<body>
 		<div class="header">
@@ -13,8 +14,8 @@
 				</div>
 				<div class="catalog">
 					<ul class="cat">
-						<li class="" onclick="show(this, 'main-content')"><b>L</b>ý thuyết</li>
-						<li class="" onclick="show(this, 'practice')"><b>B</b>ài tập</li>
+						<li class="" goto="main-content" onclick="_page.show(this)"><b>L</b>ý thuyết</li>
+						<li class="" goto="practice" onclick="_page.show(this)"><b>B</b>ài tập</li>
 					</ul>
 				</div>
 				<div class="search">
@@ -453,26 +454,477 @@ console.log(`1 + 2 = ${1 + 2}`); // 1 + 2 = 3</div>
 					</div>
 					
 				</div>
-				<!-- Object trong JS -->
 
-				<!-- Bài tập -->
-				<div class="content-tab practice d-none">
+				<!-- Object trong JS -->
+				<div class="page">
+					<h1 data-bind="object.title" data-title></h1>
+					<div class="line">
+						<div class="box grey flex item-margin">
+							<div data-bind="object.concept.title" data-title class="box-title"></div>
+							<div data-bind="object.concept.state1" class="para"></div>
+							<div data-bind="object.concept.state2" class="para"></div>
+							<div class="t-flex">
+								<div data-bind="object.concept.example1" code-name="j55234" onkeydown="_page.keyDown(this)" rows="5" class="code full"></div>
+							</div>
+							<div class="para">Trong đó:</div>
+							<ul>
+								<li data-bind="object.concept.desc1"></li>
+								<li data-bind="object.concept.desc2"></li>
+							</ul>
+							<div class="para">Object có thể không chứa thuộc tính nào, được gọi là object rỗng.</div>
+							<div class="para">Để khai báo object rỗng bạn có thể sử dụng một trong hai cách sau:</div>
+							<div data-bind="object.concept.example2" class="code"></div>
+						</div>
+					</div>
+					<div class="line">
+						<div class="box grey flex item-margin">
+							<div data-bind="object.use.title" data-title class="box-title"></div>
+							<div class="para">Có 2 cách để lấy ra giá trị của một thuộc tính trong object:</div>
+							<ul>
+								<li>Sử dụng toán tử chấm <b>.</b> theo sau là tên thuộc tính.</li>
+								<li>Sử dụng toán tử ngoặc vuông <b>[]</b>, bên trong là tên thuộc tính.</li>
+								<li>Để thay đổi giá trị thuộc tính của <b>object</b>, bạn chỉ cần sử dụng cách truy cập ở trên và gán giá trị mới cho thuộc tính đó.</li>
+							</ul>
+							<div data-bind="object.use.state1" class="para"></div>
+							<div class="t-flex">
+								<textarea data-bind="object.use.example1" code-name="5321v3se" onkeydown="_page.keyDown(this)" rows="14" class="code f-80"></textarea>
+								<div code-result="5321v3se" class="code flex"></div>
+							</div>
+							<div data-bind="object.use.state1" class="para">Để thêm thuộc tính bạn chỉ cần gán giá trị</div>
+							<div class="t-flex">
+								<textarea data-bind="object.use.example2" code-name="456lbvn" onkeydown="_page.keyDown(this)" rows="3" class="code half"></textarea>
+								<div code-result="456lbvn" class="code flex"></div>
+							</div>
+							<div data-bind="object.use.state1" class="para">Để xóa một thuộc tính của object trong JavaScript, bạn sử dụng toán tử <b>delete</b></div>
+							<div class="t-flex">
+								<textarea data-bind="object.use.example3" code-name="67867vhd" onkeydown="_page.keyDown(this)" rows="7" class="code half"></textarea>
+								<div code-result="67867vhd" class="code flex"></div>
+							</div>	
+						</div>
+					</div>
+					<div class="line">
+						<div class="box grey flex item-margin">
+							<div data-bind="object.squareOperator.title" data-title class="box-title"></div>
+							<div class="statement bold">Truy cập</div>
+							<div data-bind="object.squareOperator.concept1" class="para"></div>
+							<div class="t-flex">
+								<textarea data-bind="object.squareOperator.example1" code-name="678fnse542" onkeydown="_page.keyDown(this)" rows="10" class="code half"></textarea>
+								<div code-result="678fnse542" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">Khởi tạo thuộc tính runtime cho object</div>
+							<div class="t-flex">
+								<textarea data-bind="object.squareOperator.example2" code-name="3490fhg93" onkeydown="_page.keyDown(this)" rows="8" class="code half"></textarea>
+								<div code-result="3490fhg93" class="code flex"></div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Cú pháp rút gọn thuộc tính khi khởi tạo object -->
+					<div class="line">
+						<div class="box grey flex item-margin">
+							<div data-bind="object.compact.title" data-title class="box-title"></div>
+							<div data-bind="object.compact.state1" class="para"></div>
+							<div data-bind="object.compact.state2" class="para"></div>
+							<div class="t-flex">
+								<textarea data-bind="object.compact.example1" code-name="34523dfs23" onkeydown="_page.keyDown(this)" rows="17" class="code f-80"></textarea>
+								<div code-result="34523dfs23" class="code flex"></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Các Object đặc biệt trong JavaScript -->
+					<div class="line">
+						<div class="box grey flex item-margin">
+							<div data-bind="object.specObject.title" data-title class="box-title"></div>
+							<div class="statement bold">Đối tượng Arguments</div>
+							<div data-bind="object.specObject.arg.concept" class="para"></div>
+							<div class="t-flex">
+								<textarea data-bind="object.specObject.arg.example1" code-name="34523redfs23" onkeydown="_page.keyDown(this)" rows="14" class="code f-80"></textarea>
+								<div code-result="34523redfs23" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">Đối tượng Math</div>
+							<div data-bind="object.specObject.arg.concept" class="para">đối tượng <b>Math</b> chứa các hàm phục vụ cho tính toán số học như:</div>
+							<div class="t-flex">
+								<textarea data-bind="object.specObject.arg.example1" code-name="23daseqmx45" onkeydown="_page.keyDown(this)" rows="14" class="code f-80"></textarea>
+								<div code-result="23daseqmx45" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">Đối tượng Global</div>
+							<div data-bind="object.specObject.global.concept1" class="para"></div>
+							<div class="t-flex">
+								<textarea data-bind="object.specObject.global.example1" code-name="234dfae12" onkeydown="_page.keyDown(this)" rows="5" class="code f-80"></textarea>
+								<div code-result="234dfae12" class="code flex"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Các phương thức thường dùng -->
+				<div class="page">
+					<h1 data-bind="common.title" data-title></h1>
+					<!-- Xử lý String -->
+					<div class="line">
+						<div class="box grey flex item-margin">
+							<div data-bind="common.string.title" data-title class="box-title"></div>
+							<div class="para">Đầu vào giả định:</div>
+							<div class="t-flex">
+								<div data-bind="common.string.example1" class="code full"></div>
+							</div>
+
+							<div class="statement bold">toLowerCase()/toUpperCase()</div>
+							<div class="para">Chuyển chuỗi thành viết thường/hoa</div>
+							<div class="t-flex">
+								<textarea data-bind="common.string.example2" code-name="234sdf34w2" onkeydown="_page.keyDown(this)" rows="3" class="code half"></textarea>
+								<div code-result="234sdf34w2" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">trimStart()/trimEnd()/trim()</div>
+							<div class="para">loại bỏ khoảng trắng đầu và cuối</div>
+							<div class="t-flex">
+								<textarea data-bind="common.string.example3" code-name="sdfse5234" onkeydown="_page.keyDown(this)" rows="4" class="code half"></textarea>
+								<div code-result="sdfse5234" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">substring(start, ?end)/substr(from, ?length)</div>
+							<div class="para">lấy chuỗi con</div>
+							<div class="t-flex">
+								<textarea data-bind="common.string.example4" code-name="2354gsst57im" onkeydown="_page.keyDown(this)" rows="3" class="code f-80"></textarea>
+								<div code-result="2354gsst57im" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">charAt(pos)</div>
+							<div class="para">lấy ký tự tại vị trí</div>
+							<div class="t-flex">
+								<textarea code-name="2354gsst57im1" onkeydown="_page.keyDown(this)" rows="1" class="code f-80">example1.charAt(6)</textarea>
+								<div code-result="2354gsst57im1" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">replace(searchValue, replaceValue)/replaceAll(searchValue, replaceValue)</div>
+							<div class="para">Tìm kiếm và thay thế</div>
+							<div class="t-flex">
+								<textarea data-bind="common.string.example5" code-name="2354gsst57im2" onkeydown="_page.keyDown(this)" rows="5" class="code f-80"></textarea>
+								<div code-result="2354gsst57im2" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">Split(spliter, ?limit)</div>
+							<div class="para">Tách chuỗi</div>
+							<div class="t-flex">
+								<textarea data-bind="common.string.example6" code-name="2354gsst57im3" onkeydown="_page.keyDown(this)" rows="2" class="code f-80"></textarea>
+								<div code-result="2354gsst57im3" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">startsWith(searchString)/endsWith(searchString)/includes(searchString, ?pos)</div>
+							<div class="para">Xét xem có chuỗi cần tìm không</div>
+							<div class="t-flex">
+								<textarea data-bind="common.string.example7" code-name="2354gsst57im4" onkeydown="_page.keyDown(this)" rows="3" class="code f-80"></textarea>
+								<div code-result="2354gsst57im4" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">concat(...strings)</div>
+							<div class="para">Kết nối nhiều chuỗi</div>
+							<div class="t-flex">
+								<textarea data-bind="common.string.example8" code-name="2354gsst57im5" onkeydown="_page.keyDown(this)" rows="2" class="code half"></textarea>
+								<div code-result="2354gsst57im5" class="code flex"></div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Xử lý Object -->
+					<div class="line">
+						<div class="box grey flex item-margin">
+							<div data-bind="common.object.title" data-title class="box-title"></div>
+							<div class="para">Đầu vào giả định:</div>
+							<div class="t-flex">
+								<div data-bind="common.object.example1" class="code full"></div>
+							</div>
+
+							<div class="statement bold">JSON.parse(string)/JSON.stringify(obj)</div>
+							<div class="para">Chuyển đổi dữ liệu JSON string &lt;=&gt; Object</div>
+							<div class="t-flex">
+								<textarea data-bind="common.object.example5" code-name="234sdf34234w123" onkeydown="_page.keyDown(this)" rows="6" class="code half"></textarea>
+								<div code-result="234sdf34234w123" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">Object.entries(obj)</div>
+							<div class="para">Trả về mảng thuộc tính [[key, value]...]</div>
+							<div class="t-flex">
+								<textarea data-bind="common.object.example3" code-name="234sdf34234w3" onkeydown="_page.keyDown(this)" rows="3" class="code half"></textarea>
+								<div code-result="234sdf34234w3" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">Object.keys(obj)/Object.values(obj)</div>
+							<div class="para">Trả về một mảng các tên thuộc tính đếm được của một object đã cho</div>
+							<div class="t-flex">
+								<textarea data-bind="common.object.example4" code-name="234sdf34234w4" onkeydown="_page.keyDown(this)" rows="5" class="code half"></textarea>
+								<div code-result="234sdf34234w4" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">obj.hasOwnProperty(key)</div>
+							<div class="para">Cho biết object có thuộc tính đó hay không</div>
+							<div class="t-flex">
+								<textarea code-name="234sdf34234w5" onkeydown="_page.keyDown(this)" rows="2" class="code half">example2.hasOwnProperty("gender")</textarea>
+								<div code-result="234sdf34234w5" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">Object.assign(target, source...)</div>
+							<div class="para">Sao chép thuộc tính từ một hoặc nhiều object source vào một target khác</div>
+							<div class="t-flex">
+								<textarea data-bind="common.object.example2" code-name="234sdf34234w2" onkeydown="_page.keyDown(this)" rows="3" class="code half"></textarea>
+								<div code-result="234sdf34234w2" class="code flex"></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Xử lý Array -->
+					<div class="line">
+						<div class="box grey flex item-margin">
+							<div data-bind="common.array.title" data-title class="box-title"></div>
+							<div class="para">Đầu vào giả định:</div>
+							<div class="t-flex">
+								<div data-bind="common.array.example1" class="code full"></div>
+							</div>
+
+							<div class="statement bold">concat(...items)</div>
+							<div class="para">Dùng để nối 2 hay nhiều mảng với nhau</div>
+							<div class="t-flex">
+								<textarea data-bind="common.array.example2" code-name="3sdf35JHK" onkeydown="_page.keyDown(this)" rows="3" class="code half"></textarea>
+								<div code-result="3sdf35JHK" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">filter(callback(element[, index])[, thisArg])</div>
+							<div class="para">Lọc và trả về 1 mảng mới sau khi lọc</div>
+							<div class="para pl-30"><b>filter()</b> trả về một mảng RỖNG nếu không có phần tử nào thỏa mãn điều kiện</div>
+							<div class="para pl-30"><b>callback:</b> Hàm thực thi lọc mỗi giá trị trong mảng</div>
+							<div class="para pl-30"><b>element:</b> Phần tử hiện tại đang được xử lý trong mảng</div>	
+							<div class="para pl-30"><b>index</b> (không bắt buộc): Thứ tự của phần tử hiện tại đang được xử lý trong mảng</div>	
+							<div class="para pl-30"><b>thisArg</b> (không bắt buộc): context để thực thi callback</div>	
+							<div class="t-flex">
+								<textarea data-bind="common.array.example3" code-name="3sdf35JHK1" onkeydown="_page.keyDown(this)" rows="5" class="code half"></textarea>
+								<div code-result="3sdf35JHK1" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">find(callback(element, index)[, thisArg])</div>
+							<div class="para">Tìm kiếm phần tử đầu tiên thỏa mãn điều kiện tìm kiếm</div>
+							<div class="para pl-30"><b>callback</b>: Hàm thực thi lọc mỗi giá trị trong mảng</div>
+							<div class="para pl-30"><b>element</b>: Phần tử hiện tại đang được xử lý trong mảng</div>	
+							<div class="para pl-30"><b>index</b> (không bắt buộc): Thứ tự của phần tử hiện tại đang được xử lý trong mảng</div>	
+							<div class="para pl-30"><b>thisArg</b> (không bắt buộc): context để thực thi callback</div>	
+							<div class="t-flex">
+								<textarea data-bind="common.array.example4" code-name="3sdf35JHK2" onkeydown="_page.keyDown(this)" rows="5" class="code half"></textarea>
+								<div code-result="3sdf35JHK2" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">forEach(callback(element, index)[, thisArg])</div>
+							<div class="para">Duyệt từng phần tử trong mảng</div>
+							<div class="para">callback: Hàm sẽ thực thi lên từng phần tử của mảng được gọi</div>
+							<div class="para pl-30"><b>callback</b>: Hàm sẽ thực thi lên từng phần tử của mảng được gọi</div>
+							<div class="para pl-30"><b>element</b>: Phần tử hiện tại đang được xử lý trong mảng</div>	
+							<div class="para pl-30"><b>index</b> (không bắt buộc): Thứ tự của phần tử hiện tại đang được xử lý trong mảng</div>	
+							<div class="para pl-30"><b>thisArg</b> (không bắt buộc): context để thực thi callback</div>	
+							<div class="t-flex">
+								<textarea data-bind="common.array.example5" code-name="3sdf35JHK3" onkeydown="_page.keyDown(this)" rows="4" class="code half"></textarea>
+								<div code-result="3sdf35JHK3" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">includes(element[, fromIndex])</div>
+							<div class="para">Kiểm tra xem phần tử đã cho có tồn tại trong mảng hay không</div>
+							<div class="para pl-30"><b>element</b>: Phần tử cần kiểm tra</div>	
+							<div class="para pl-30"><b>fromIndex</b> (không bắt buộc): Vị trí bắt đầu tìm kiếm</div>	
+							<div class="t-flex">
+								<textarea data-bind="common.array.example6" code-name="3sdf35JHK4" onkeydown="_page.keyDown(this)" rows="4" class="code half"></textarea>
+								<div code-result="3sdf35JHK4" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">indexOf(element[, fromIndex])</div>
+							<div class="para">Dùng để tìm kiếm vị trí của phần tử trong mảng</div>
+							<div class="para pl-30"><b>element</b>: Phần tử hiện tại đang được xử lý trong mảng</div>	
+							<div class="para pl-30"><b>fromIndex</b> (không bắt buộc): Vị trí bắt đầu tìm kiếm</div>	
+							<div class="t-flex">
+								<textarea data-bind="common.array.example7" code-name="3sdf35JHK5" onkeydown="_page.keyDown(this)" rows="4" class="code half"></textarea>
+								<div code-result="3sdf35JHK5" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">join(?separator)</div>
+							<div class="para">Dùng để tạo ra một chuỗi mới bằng cách nối tất cả các phần tử của mảng, mặc định ngăn cách chúng bởi dấu '<b>,</b>' hoặc một chuỗi ký tự xác định.</div>
+							<div class="para pl-30"><b>separator</b>: chuỗi ngăn cách</div>
+							<div class="t-flex">
+								<textarea data-bind="common.array.example8" code-name="3sdf35JHK6" onkeydown="_page.keyDown(this)" rows="2" class="code half"></textarea>
+								<div code-result="3sdf35JHK6" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">map(callback(element[, index[, array]])[, thisArg])</div>
+							<div class="para">Giúp tạo ra một mảng mới với các phần tử là kết quả từ việc thực thi một hàm lên <b>từng phần tử</b> của mảng ban đầu</div>
+							<div class="para pl-30"><b>callback</b>: Hàm để tạo ra phần tử cho mảng mới</div>
+							<div class="para pl-30"><b>element</b>: Index của phần tử trong mảng đang được xử lý</div>
+							<div class="para pl-30"><b>index</b>: chuỗi ngăn cách</div>
+							<div class="para pl-30"><b>array</b>: Mảng đang được gọi với map</div>
+							<div class="para pl-30"><b>thisArg</b> (không bắt buộc): context để thực thi callback</div>	
+							<div class="t-flex">
+								<textarea data-bind="common.array.example9" code-name="3sdf35JHK7" onkeydown="_page.keyDown(this)" rows="5" class="code half"></textarea>
+								<div code-result="3sdf35JHK7" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">pop()</div>
+							<div class="para">Dùng để xoá phần tử cuối cùng ra khỏi mảng</div>
+							<div class="para">Làm thay đổi mảng ban đầu</div>
+							<div class="para">Trả về phần tử đã bị xoá ra khỏi mảng</div>
+							<div class="t-flex">
+								<textarea data-bind="common.array.example10" code-name="3sdf35JHK9" onkeydown="_page.keyDown(this)" rows="2" class="code half"></textarea>
+								<div code-result="3sdf35JHK9" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">shift()</div>
+							<div class="para">Dùng để xoá phần tử đầu tiên ra khỏi mảng</div>
+							<div class="para">Làm thay đổi mảng ban đầu</div>
+							<div class="para">Trả về phần tử đã bị xoá ra khỏi mảng</div>
+							<div class="t-flex">
+								<textarea data-bind="common.array.example11" code-name="3sdf35JHK9" onkeydown="_page.keyDown(this)" rows="2" class="code half"></textarea>
+								<div code-result="3sdf35JHK9" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">push(...items)</div>
+							<div class="para">Giúp ta thêm một hoặc nhiều phần tử vào <b>cuối mảng</b></div>
+							<div class="para">Làm thay đổi mảng ban đầu</div>
+							<div class="para">Trả về <b>độ dài mới</b> của mảng (arr.length) sau khi thêm phần tử</div>
+							<div class="t-flex">
+								<textarea data-bind="common.array.example12" code-name="3sdf35JHK10" onkeydown="_page.keyDown(this)" rows="2" class="code half"></textarea>
+								<div code-result="3sdf35JHK10" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">unshift(...items)</div>
+							<div class="para">Giúp ta thêm một hoặc nhiều phần tử vào <b>đầu mảng</b></div>
+							<div class="para">Làm thay đổi mảng ban đầu</div>
+							<div class="para">Trả về <b>độ dài mới</b> của mảng (arr.length) sau khi thêm phần tử</div>
+							<div class="t-flex">
+								<textarea data-bind="common.array.example13" code-name="3sdf35JHK11" onkeydown="_page.keyDown(this)" rows="2" class="code half"></textarea>
+								<div code-result="3sdf35JHK11" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">reduce(callback(accumulator, currentValue[, index[, array]]))</div>
+							<div class="para">Dùng để thực thi một hàm lên từng phần tử của mảng (từ trái sang phải) với một biến tích lũy để thu về một giá trị duy nhất</div>
+							<div class="para">Trả về giá trị sau khi rút gọn</div>
+							<div class="para pl-30"><b>callback</b>: Hàm dùng để thực thi với từng phần tử của mảng</div>
+							<div class="para pl-30"><b>accumulator</b>: Biến tích lũy, truyền giá trị trả về của mỗi lần gọi callback</div>
+							<div class="para pl-30"><b>currentValue</b>: Phần tử trong mảng hiện tại đang được xử lý</div>
+							<div class="para pl-30"><b>index</b>: Mảng đang được gọi với map</div>
+							<div class="para pl-30"><b>array</b>: Mảng đang được gọi với reduce()</div>
+							<div class="t-flex">
+								<textarea data-bind="common.array.example14" code-name="3sdf35JHK12" onkeydown="_page.keyDown(this)" rows="7" class="code half"></textarea>
+								<div code-result="3sdf35JHK12" class="code flex"></div>
+							</div>
+							
+							<div class="statement bold">reverse()</div>
+							<div class="para">Dùng để đảo ngược mảng, phần tử đầu thành phần tử cuối và ngược lại</div>
+							<div class="para">Làm thay đổi mảng ban đầu</div>
+							<div class="para">Trả về mảng sau khi đảo ngược</div>
+							<div class="t-flex">
+								<textarea data-bind="common.array.example15" code-name="3sdf35JHK13" onkeydown="_page.keyDown(this)" rows="2" class="code half"></textarea>
+								<div code-result="3sdf35JHK13" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">some(callback(element[, index[, array]])[, thisArg])</div>
+							<div class="para">Kiểm tra xem có ít nhất một phần tử của mảng thoả mãn điều kiện ở hàm được truyền vào hay không</div>
+							<div class="para">Trả về kiểu Boolean: true nếu có ít nhất một phần tử thoả mãn và false nếu không thoả mãn</div>
+							<div class="para pl-30"><b>callback</b>: Hàm dùng để kiểm tra từng phần tử</div>
+							<div class="para pl-30"><b>element</b>: Phần tử đang được kiểm tra</div>
+							<div class="para pl-30"><b>index </b>: Chỉ mục của phần tử đang được kiểm tra</div>
+							<div class="para pl-30"><b>array</b>: Mảng đang được gọi với</div>
+							<div class="para pl-30"><b>thisArg</b>: context của hàm callback</div>
+							<div class="t-flex">
+								<textarea data-bind="common.array.example16" code-name="3sdf35JHK14" onkeydown="_page.keyDown(this)" rows="3" class="code half"></textarea>
+								<div code-result="3sdf35JHK14" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">sort([compareFunc])</div>
+							<div class="para">Sắp xếp các phần tử trong một mảng</div>
+							<div class="para">Mặc định các phần tử sẽ được sắp xếp theo bảng chữ cái với thứ tự tăng dần</div>
+							<div class="para">Làm thay đổi mảng ban đầu</div>
+							<div class="para">Trả về mảng sau khi được sắp xếp</div>
+							<div class="para pl-30"><b>compareFunc</b>: Hàm dùng để xác định thứ tự sắp xếp</div>
+							<div class="t-flex">
+								<textarea data-bind="common.array.example17" code-name="3sdf35JHK15" onkeydown="_page.keyDown(this)" rows="7" class="code half"></textarea>
+								<div code-result="3sdf35JHK15" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">slice([start[, end]])</div>
+							<div class="para">Dùng để cắt bỏ một số phần tử của array</div>
+							<div class="para">Mặc định các phần tử sẽ được sắp xếp theo bảng chữ cái với thứ tự tăng dần</div>
+							<div class="para">Không làm thay đổi mảng ban đầu</div>
+							<div class="para">Trả về mảng sau khi cắt</div>
+							<div class="para pl-30"><b>begin</b>: Chỉ số bắt đầu chọn phần tử</div>
+							<div class="para pl-30"><b>end</b>: Chỉ số ngừng chọn phần tử</div>
+							<div class="t-flex">
+								<textarea data-bind="common.array.example18" code-name="3sdf35JHK16" onkeydown="_page.keyDown(this)" rows="7" class="code half"></textarea>
+								<div code-result="3sdf35JHK16" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">splice(start[, deleteCount [, ...items])</div>
+							<div class="para">Dùng để xóa phần tử đang tồn tại hoặc thêm vào phần tử mới</div>
+							<div class="para">Mặc định các phần tử sẽ được sắp xếp theo bảng chữ cái với thứ tự tăng dần</div>
+							<div class="para">Làm thay đổi mảng ban đầu</div>
+							<div class="para">Trả về mảng chứa các phần tử đã bị xoá</div>
+							<div class="para pl-30"><b>start</b>: Vị trí bắt đầu</div>
+							<div class="para pl-30"><b>items</b>: Các phần tử thêm vào mảng, bắt đầu từ chỉ số start</div>
+							<div class="t-flex">
+								<textarea data-bind="common.array.example19" code-name="3sdf35JHK17" onkeydown="_page.keyDown(this)" rows="7" class="code half"></textarea>
+								<div code-result="3sdf35JHK17" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">Array.from(arrLike[, mapFunc[, thisArg]])</div>
+							<div class="para">Dùng để tạo mới một mảng</div>
+							<div class="para">Trả về mảng chứa các phần tử đã bị xoá</div>
+							<div class="para pl-30"><b>arrayLike</b>: Đối tượng có tính chất giống mảng</div>
+							<div class="para pl-30"><b>mapFn</b>: Hàm biến đổi từng phần từ của mảng gốc</div>
+							<div class="para pl-30"><b>thisArg</b>: context của mapFn</div>
+							<div class="t-flex">
+								<textarea data-bind="common.array.example20" code-name="3sdf35JHK18" onkeydown="_page.keyDown(this)" rows="7" class="code half"></textarea>
+								<div code-result="3sdf35JHK18" class="code flex"></div>
+							</div>
+
+							<div class="statement bold">Array.isArray(arg)</div>
+							<div class="para">Kiểm tra giá trị truyền vào có phải là một mảng kiểu Array hay không</div>
+							<div class="para"> Trả về kiểu Boolean: true nếu là mảng và false nếu không phải mảng</div>
+							<div class="t-flex">
+								<textarea data-bind="common.array.example21" code-name="3sdf35JHK19" onkeydown="_page.keyDown(this)" rows="7" class="code half"></textarea>
+								<div code-result="3sdf35JHK19" class="code flex"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Bài tập -->
+			<div class="content-tab practice d-none">
 				<div class="page">
 					<h1>Bài tập</h1>
 					<div class="line">
 						<div class="box grey item-margin full">
-							<div class="statement">Bài 1: Các tên biến sau đúng hay sai?</div>
-							<div class="code">let num = 100;
-let _result3@ = "haha";
-let $_$ = "hehehe";
-let 2me = 'love';
-let I_WANT_TO_EAT = "just eat it";
-let dientihinhvuong = 999;
-let a%b = 50;
-let var = 'oh no';</div>
+							<div data-bind="ex1.title" data-title class="statement bold"></div>
+							<div data-bind="ex1.state1" class="para"></div>
+							<div class="t-flex">
+								<div data-bind="ex1.tip" class="code full"></div>
+							</div>
+							<div class="para">Lời giải:</div>
+							<div class="t-flex">
+								<textarea code-name="q34afZd3q24324234" onkeydown="_page.keyDown(this)" rows="10" class="code f-80"></textarea>
+								<div code-result="q34afZd3q24324234" class="code flex"></div>
+							</div>
 						</div>
 					</div>
-				</div>
+
+					<div class="line">
+						<div class="box grey item-margin full">
+							<div data-bind="ex2.title" data-title class="statement bold"></div>
+							<div data-bind="ex2.state1" class="para"></div>
+							<div class="para">Lời giải:</div>
+							<div class="t-flex">
+								<textarea data-bind="ex2.code" code-name="q34afZd3q24324235" onkeydown="_page.keyDown(this)" rows="10" class="code f-80"></textarea>
+								<div code-result="q34afZd3q24324235" class="code flex"></div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -485,7 +937,6 @@ let var = 'oh no';</div>
 
 		<script src="layoutConfig.js"></script>
 		<script src="layout.js"></script>
-		<script src="pageData.js"></script>
 		<script src="page.js"></script>
 		<script src="Demo.js"></script>
 	<body/>

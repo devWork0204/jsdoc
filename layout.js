@@ -11,6 +11,7 @@ class LayoutMagager {
         });
         node.innerHTML = html;
     }
+
     goto(item){
         let title = item.getAttribute("title");
         let parentNode = document.querySelector(".content-tab.main-content");
